@@ -1,10 +1,8 @@
-//
-//  AppceleratorSocialshare.h
-//  SocialShare
-//
-//  Created by Your Name
-//  Copyright (c) 2021 Your Company. All rights reserved.
-//
+/**
+ * Appcelerator Titanium Mobile - Social Share Module
+ * Copyright (c) 2021 by Axway, Inc. All Rights Reserved.
+ * Proprietary and Confidential - This source code is not for redistribution
+ */
 
 #import <UIKit/UIKit.h>
 

@@ -37,7 +37,7 @@ module.exports = config => {
 				platform: 'ios'
 			}
 		},
-		browsers: ['ios' ],
+		browsers: [ 'ios' ],
 		client: {
 			jasmine: {
 				random: false

@@ -32,7 +32,7 @@ used for testing and providing an example of usage to the users of your module.
 
 ## Building
 
-Simply run `appc run -p [ios|android] --build-only` which will compile and package your module.
+Simply run `appc run -p [ios] --build-only` which will compile and package your module.
 
 ## Linting
 
@@ -64,7 +64,7 @@ Register your module with your application by editing `tiapp.xml` and adding you
 Example:
 
 <modules>
-  <module version="1.0.0">Appcelerator.SocialShare</module>
+  <module version="1.0.0">appcelerator.socialshare</module>
 </modules>
 
 When you run your project, the compiler will combine your module along with its dependencies
@@ -77,14 +77,14 @@ To use your module in code, you will need to require it.
 ### ES6+ (recommended)
 
 ```js
-import MyModule from 'Appcelerator.SocialShare';
+import MyModule from 'appcelerator.socialshare';
 MyModule.foo();
 ```
 
 ### ES5
 
 ```js
-var MyModule = require('Appcelerator.SocialShare');
+var MyModule = require('appcelerator.socialshare');
 MyModule.foo();
 ```
 
@@ -93,7 +93,7 @@ MyModule.foo();
 To test your module with the example, use:
 
 ```js
-appc run -p [ios|android]
+appc run -p [ios]
 ```
 
 This will execute the app.js in the example/ folder as a Titanium application.

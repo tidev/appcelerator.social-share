@@ -16,4 +16,4 @@ name: SocialShare
 moduleid: appcelerator.socialshare
 guid: 73cd88a7-59c4-4d1f-a70b-568ae2cc5ecc
 platform: iphone
-minsdk: 9.2.1.GA
+minsdk: 9.2.0.GA

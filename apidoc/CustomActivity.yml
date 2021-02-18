@@ -1,0 +1,33 @@
+---
+name: Modules.CustomActivity
+extends: Titanium.Module
+summary: An class that you use for app-specific services.
+since: "1.0.0"
+description: |
+    You should use CustomActivity only if you want to provide custom services to the user.
+    A service takes data that is passed to it, does something to that data, and returns the results. For example, a social media service might take whatever text, images, or other content is provided to it and post them to the user’s account.
+platforms: [iphone, ipad] 
+properties:
+      - name: title
+        summary: A user-readable string that describes the service.
+        type: String
+        platforms: [iphone, ipad]
+        since: "1.0.0"
+
+      - name: image
+        summary: An image that identifies the service to the user..
+        type: Titanium.Blob
+        platforms: [iphone, ipad]
+        since: "1.0.0"
+
+      - name: type
+        summary: A structure that describes the types of acitivities for which the system has built-in support.
+        type: String
+        platforms: [iphone, ipad]
+        since: "1.0.0"
+
+      - name: category
+        summary: An enumeration that defines categories of activities.
+        type: Number
+        platforms: [iphone, ipad]
+        since: "1.0.0"        

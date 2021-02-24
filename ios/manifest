@@ -1,0 +1,19 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 1.0.0
+apiversion: 2
+architectures: armv7 arm64 i386 x86_64
+mac: false
+description: Provides Social Share module for Titanium applications.
+author: Axway
+license: Proprietary
+copyright: Copyright (c) 2021 by Axway Appcelerator
+
+# these should not be edited
+name: SocialShare
+moduleid: appcelerator.socialshare
+guid: 73cd88a7-59c4-4d1f-a70b-568ae2cc5ecc
+platform: iphone
+minsdk: 9.2.0.GA

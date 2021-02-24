@@ -1,0 +1,8 @@
+---
+name: Modules.SocialShare
+extends: Titanium.Module
+summary: Add-on Social Share module
+since: "1.0.0"
+description: |
+    Social Share Module
+platforms: [iphone, ipad] 

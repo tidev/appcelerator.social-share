@@ -7,24 +7,8 @@
 import UIKit
 import TitaniumKit
 
-/**
-
- Titanium Swift Module Requirements
- ---
-
- 1. Use the @objc annotation to expose your class to Objective-C (used by the Titanium core)
- 2. Use the @objc annotation to expose your method to Objective-C as well.
- 3. Method arguments always have the "[Any]" type, specifying a various number of arguments.
- Unwrap them like you would do in Swift, e.g. "guard let arguments = arguments, let message = arguments.first"
- 4. You can use any public Titanium API like before, e.g. TiUtils. Remember the type safety of Swift, like Int vs Int32
- and NSString vs. String.
-
- */
-
 @objc(AppceleratorSocialshareModule)
 class AppceleratorSocialshareModule: TiModule {
-
-    public let testProperty: String = "Hello World"
 
     func moduleGUID() -> String {
         return "73cd88a7-59c4-4d1f-a70b-568ae2cc5ecc"
@@ -34,30 +18,26 @@ class AppceleratorSocialshareModule: TiModule {
         return "appcelerator.socialshare"
     }
 
-    override func startup() {
-        super.startup()
-        debugPrint("[DEBUG] \(self) loaded")
-    }
+    @objc(createCustomActivity:)
+    func createCustomActivity(arg: Any?) -> TiCustomActivityProxy? {
+        let values = arg as? [Any]
+        let options = values?.first as? [String: Any]
+        let category = options?["category"] as? NSNumber
+        let type = options?["type"] as? String
+        let title = options?["title"] as? String
+        let image = options?["image"] as? TiBlob
 
-    @objc(example:)
-    func example(arguments: [Any]?) -> String? {
-        guard let arguments = arguments, let params = arguments[0] as? [String: Any] else { return nil }
-
-        // Example method.
-        // Call with "MyModule.example({ hello: 'world' })"
-
-        return params["hello"] as? String
-    }
-
-    @objc public var exampleProp: String {
-        get {
-            // Example property getter
-            return "Titanium rocks!"
+        let activity = TiCustomActivity()
+        activity.title = title
+        if let type = type {
+            activity.type = UIActivity.ActivityType(rawValue: type)
         }
-        set {
-            // Example property setter
-            // Call with "MyModule.exampleProp = 'newValue'"
-            self.replaceValue(newValue, forKey: "exampleProp", notification: false)
+        if let image = image {
+            activity.image = image.image()
         }
+        if let category = category {
+            TiCustomActivity.category =  UIActivity.Category(rawValue: category.intValue) ?? UIActivity.Category.share
+        }
+        return TiCustomActivityProxy(pageContext: self.pageContext, activity: activity)
     }
 }

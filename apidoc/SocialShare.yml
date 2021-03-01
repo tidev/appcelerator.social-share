@@ -6,3 +6,45 @@ since: "1.0.0"
 platforms: [iphone, ipad]
 description: |
     Social Share Module
+methods:
+  - name: createCustomActivity
+    since: "1.0.0"  
+    summary: Create custom activity object which used to share
+    parameters:
+      - name: category
+        summary: Category for activity. Could be any of Activity_Category_*
+        type: Number
+      - name: type
+        summary: activity type for activity
+        type: String   
+      - name: title
+        summary: title for activity
+        type: String 
+      - name: image
+        summary: image for activity
+        type: Titanium.Blob
+    returns:
+        type: Modules.CustomActivity
+
+  - name: createActivityItemSource
+    since: "1.0.0"  
+    summary: Create activity Item Source object which used to share
+    parameters:
+      - name: contentType
+        summary: Content Type of item. It could be any of Content_Type_*
+        type: String
+    returns:
+        type: Modules.ActivityItemSource
+
+  - name: createActivityItemProvider
+    since: "1.0.0"  
+    summary: Create activity Item Provider object which used to share
+    parameters:
+      - name: contentType
+        summary: Content Type of item. It could be any of Content_Type_*
+        type: String
+      - name: placeHolder
+        summary: Placeholder of item. It should return Titanium.Blob if content type is Content_Type_Image/Content_Type_Data and return string if content type is Content_Type_String/Content_Type_URL
+        type: Object
+    returns:
+        type: Modules.ActivityItemSource

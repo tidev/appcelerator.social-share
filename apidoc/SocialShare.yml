@@ -6,6 +6,43 @@ since: "1.0.0"
 platforms: [iphone, ipad]
 description: |
     Social Share Module
+properties:
+  - name: Content_Type_Image
+    type: String
+    summary: A content type which define that item data is Image
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_URL
+    type: String
+    summary: A content type which define that item data is URL
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_String
+    type: String
+    summary: A content type which define that item data is String
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_Data
+    type: String
+    summary: A content type which define that item data is Data
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Category_Action
+    type: Number
+    summary: A category type which define that item category is action
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Category_Share
+    type: Number
+    summary: A category type which define that item category is share
+    permission: read-only
+    since: "1.0.0"        
+    
 methods:
   - name: createCustomActivity
     since: "1.0.0"  

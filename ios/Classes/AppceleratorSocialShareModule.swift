@@ -71,7 +71,7 @@ class AppceleratorSocialshareModule: TiModule {
         }
         var placeHolder: Any?
         if let result = placeHolderItem as? TiBlob {
-            placeHolder =  TiShareUtils.blobToImage(object: result)
+            placeHolder =  result.image()
         }
         if let result = placeHolderItem as? String {
             placeHolder =  result

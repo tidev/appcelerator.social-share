@@ -18,7 +18,7 @@ class TiActivityItemProvider: UIActivityItemProvider {
         if let block = proxy?.fetchPlaceholderItem {
             let result = block.call([], thisObject: proxy)
             if let result = result as? TiBlob {
-                return TiShareUtils.blobToImage(object: result)
+                return result.image()
             }
             if let result = result as? String {
                 return result

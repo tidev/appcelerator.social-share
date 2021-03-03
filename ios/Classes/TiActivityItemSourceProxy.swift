@@ -50,4 +50,7 @@ class TiActivityItemSourceProxy: TiProxy {
     @objc
     var fetchThumbnailImage: KrollCallback?
 
+    func activityItemSource() -> UIActivityItemSource {
+        return _source
+    }
 }

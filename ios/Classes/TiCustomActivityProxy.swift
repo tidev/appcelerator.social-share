@@ -40,4 +40,8 @@ class TiCustomActivityProxy: TiProxy {
         return _activity.type?.rawValue
     }
 
+    func activity() -> TiCustomActivity {
+        return _activity
+    }
+
 }

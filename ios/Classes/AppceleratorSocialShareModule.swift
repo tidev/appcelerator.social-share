@@ -81,4 +81,55 @@ class AppceleratorSocialshareModule: TiModule {
         }
         return nil
     }
+
+    @objc(shareWithItems:)
+    func shareWithItems(arg: Any?) {
+        let values = arg as? [Any]
+        let options = values?.first as? [String: Any]
+        guard let activityItemsProxies = options?["activityItems"] as? [Any] else {
+            return
+        }
+        let completionWithItemsHandler = options?["completionWithItemsHandler"] as? KrollCallback
+        let activityProxies = options?["activities"] as? [TiCustomActivityProxy]
+        let activities = activityProxies?.map({ (proxy) in
+            return proxy.activity()
+        })
+        let excludedActivityTypes = options?["excludedActivityTypes"] as? [String]
+        let excludedActivity = excludedActivityTypes?.map({ (item) in
+            return UIActivity.ActivityType(item)
+        })
+
+        var activityItems: [UIActivityItemSource] = []
+        for item in activityItemsProxies {
+            if let item = item as? TiActivityItemProviderProxy {
+                activityItems.append(item.activityItemProvider())
+                continue
+            }
+            if let item = item as? TiActivityItemSourceProxy {
+                activityItems.append(item.activityItemSource())
+                continue
+            }
+            completionWithItemsHandler?.call([["errorCode": 500 as Any,
+                                               "errorDomain": "Invalid Activity Items",
+                                               "errorDescription": "Invalid Activity Items"]], thisObject: self)
+        }
+
+        let activityVC = UIActivityViewController(activityItems: activityItems, applicationActivities: activities)
+        let block: (UIActivity.ActivityType?, Bool, [Any]?, Error?) -> Void = { (type, completed, _, error) in
+            completionWithItemsHandler?.call([["errorCode": (error as NSError?)?.code as Any,
+                                               "errorDomain": (error as NSError?)?.domain as Any,
+                                               "errorDescription": error?.localizedDescription as Any,
+                                               "completed": NSNumber(value: completed),
+                                               "activityType": type?.rawValue as Any]], thisObject: self)
+        }
+        activityVC.completionWithItemsHandler = block
+        activityVC.excludedActivityTypes = excludedActivity
+
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            topController.present(activityVC, animated: true, completion: nil)
+        }
+    }
 }

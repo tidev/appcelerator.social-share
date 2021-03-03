@@ -36,4 +36,8 @@ class TiActivityItemProviderProxy: TiProxy {
 
     @objc
     var fetchItem: KrollCallback?
+
+    func activityItemProvider() -> TiActivityItemProvider {
+        return _source
+    }
 }

@@ -15,7 +15,7 @@ win.open();
 var social_share = require('appcelerator.socialshare');
 Ti.API.info('module is => ' + social_share);
 
-label.text = social_share.example();
+// label.text = social_share.example();
 
 Ti.API.info('module exampleProp is => ' + social_share.exampleProp);
 social_share.exampleProp = 'This is a test value';

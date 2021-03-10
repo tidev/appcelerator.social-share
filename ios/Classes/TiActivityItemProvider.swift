@@ -9,9 +9,11 @@ import TitaniumKit
 
 class TiActivityItemProvider: UIActivityItemProvider {
     weak var proxy: TiActivityItemProviderProxy!
+    private var placeholder: Any?
 
     override init(placeholderItem: Any) {
         super.init(placeholderItem: placeholderItem)
+        self.placeholder = placeholderItem
     }
 
     override var placeholderItem: Any? {
@@ -24,7 +26,7 @@ class TiActivityItemProvider: UIActivityItemProvider {
                 return result
             }
         }
-        return nil
+        return self.placeholder
     }
 
     override var activityType: UIActivity.ActivityType? {

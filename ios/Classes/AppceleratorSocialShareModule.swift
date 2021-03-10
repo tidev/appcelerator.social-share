@@ -18,6 +18,23 @@ class AppceleratorSocialshareModule: TiModule {
     @objc public let Activity_Category_Action = UIActivity.Category.action.rawValue
     @objc public let Activity_Category_Share = UIActivity.Category.share.rawValue
 
+    @objc public let Activity_Type_Post_To_Facebook = UIActivity.ActivityType.postToFacebook.rawValue
+    @objc public let Activity_Type_Post_To_Twitter = UIActivity.ActivityType.postToTwitter.rawValue
+    @objc public let Activity_Type_Post_To_Weibo = UIActivity.ActivityType.postToWeibo.rawValue
+    @objc public let Activity_Type_Message = UIActivity.ActivityType.message.rawValue
+    @objc public let Activity_Type_Mail = UIActivity.ActivityType.mail.rawValue
+    @objc public let Activity_Type_Print = UIActivity.ActivityType.print.rawValue
+    @objc public let Activity_Type_Copy_To_Pasteboard = UIActivity.ActivityType.copyToPasteboard.rawValue
+    @objc public let Activity_Type_Assign_To_Contact = UIActivity.ActivityType.assignToContact.rawValue
+    @objc public let Activity_Type_Save_To_CameraRoll = UIActivity.ActivityType.saveToCameraRoll.rawValue
+    @objc public let Activity_Type_Add_To_ReadingList = UIActivity.ActivityType.addToReadingList.rawValue
+    @objc public let Activity_Type_Post_To_Flickr = UIActivity.ActivityType.postToFlickr.rawValue
+    @objc public let Activity_Type_Post_To_Vimeo = UIActivity.ActivityType.postToVimeo.rawValue
+    @objc public let Activity_Type_Post_To_TencentWeibo = UIActivity.ActivityType.postToTencentWeibo.rawValue
+    @objc public let Activity_Type_AirDrop = UIActivity.ActivityType.airDrop.rawValue
+    @objc public let Activity_Type_Open_In_IBooks = "com.apple.UIKit.activity.OpenInIBooks"
+    @objc public let Activity_Type_Markup_As_PDF = "com.apple.UIKit.activity.MarkupAsPDF"
+
     func moduleGUID() -> String {
         return "73cd88a7-59c4-4d1f-a70b-568ae2cc5ecc"
     }

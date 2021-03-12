@@ -43,6 +43,102 @@ properties:
     permission: read-only
     since: "1.0.0"        
     
+  - name: Activity_Type_Post_To_Facebook
+    type: String
+    summary: A type of activity that posts the provided content to the user’s wall on Facebook.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Post_To_Twitter
+    type: String
+    summary: A type of activity that posts the provided content to the user’s Twitter feed.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Post_To_Weibo
+    type: String
+    summary: A type of activity that posts the provided content to the user’s Tencent Weibo feed.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Message
+    type: String
+    summary: A type of activity that posts the provided content to the Messages app.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Mail
+    type: String
+    summary: A type of activity that posts the provided content to a new email message.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Print
+    type: String
+    summary: A type of activity that prints the provided content.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Copy_To_Pasteboard
+    type: String
+    summary: A type of activity that posts the provided content to the pasteboard.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Assign_To_Contact
+    type: String
+    summary: A type of activity that assigns the image to a contact.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Save_To_CameraRoll
+    type: String
+    summary: A type of activity that assigns the image or video to the user’s camera roll.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Add_To_ReadingList
+    type: String
+    summary: A type of activity that adds the URL to Safari’s reading list.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Post_To_Flickr
+    type: String
+    summary: A type of activity that posts the provided image to the user’s Flickr account.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Post_To_Vimeo
+    type: String
+    summary: A type of activity that posts the provided video to the user’s Vimeo account.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Post_To_TencentWeibo
+    type: String
+    summary: A type of activity that posts the provided content to the user’s Tencent Weibo feed.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_AirDrop
+    type: String
+    summary: A type of activity that makes the provided content available through AirDrop.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Open_In_IBooks
+    type: String
+    summary: A type of activity that opens the content in iBooks.
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Type_Markup_As_PDF
+    type: String
+    summary: A type of activity that marks up the provided content as a PDF file.
+    permission: read-only
+    since: "1.0.0"
+
 methods:
   - name: createCustomActivity
     since: "1.0.0"  
@@ -85,3 +181,42 @@ methods:
         type: Object
     returns:
         type: Modules.ActivityItemSource
+
+  - name: shareWithItems
+    since: "1.0.0"  
+    summary: Share activity items to custom activities
+    parameters:
+      - name: activityItems
+        summary: An array of data objects used in the execution of the activity. It could be Array of ActivityItemProvider or ActivityItemSource
+        type: Array
+      - name: activities
+        summary: it is an array of CustomActivity objects, representing custom services supported by the application. This parameter can be nil.
+        type: Array<Modules.CustomActivity>
+      - name: excludedActivityTypes
+        summary: Turn off some activity types of the system. default is undefined. activity types listed will not be displayed
+        type: Array<String>
+      - name: completionWithItemsHandler
+        summary: Turn off some activity types of the system. default is undefined. activity types listed will not be displayed
+        type: Callback<ShareCallBack>
+
+---
+name: ShareCallBack
+since: "1.0.0"
+summary: Argument passed to the callback for share completion
+properties:
+  - name: activityType
+    summary: Activity type which is selected
+    type: String  
+  - name: completed
+    summary: Boolean value which shows if share is complete or not
+    type: Boolean  
+  - name: errorCode
+    type: String
+    summary: The error code; only present if an error occurred.
+  - name: errorDomain
+    type: String
+    summary: The error domain; only present if an error occurred..
+  - name: errorDescription
+    type: String
+    summary: The error description; only peresent if an      
+             

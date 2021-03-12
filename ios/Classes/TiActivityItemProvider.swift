@@ -40,13 +40,15 @@ class TiActivityItemProvider: UIActivityItemProvider {
         guard let block = proxy?.fetchItem else {
             return "Error"
         }
-        var arg: [[String: Any]] = []
-        if let activityType = activityType {
-            arg.append(["activityType": activityType.rawValue])
+        var item: Any?
+        DispatchQueue.main.sync {
+            var arg: [[String: Any]] = []
+            if let activityType = activityType {
+                arg.append(["activityType": activityType.rawValue])
+            }
+            let result = block.call(arg, thisObject: proxy)
+            item = TiShareUtils.convertToNativeItem(contentType: proxy._contentType, item: result)
         }
-
-        let result = block.call(arg, thisObject: proxy)
-        let item = TiShareUtils.convertToNativeItem(contentType: proxy._contentType, item: result)
         return item ?? "Error"
     }
 }

@@ -6,3 +6,82 @@ since: "1.0.0"
 platforms: [iphone, ipad]
 description: |
     Social Share Module
+properties:
+  - name: Content_Type_Image
+    type: String
+    summary: A content type which define that item data is Image
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_URL
+    type: String
+    summary: A content type which define that item data is URL
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_String
+    type: String
+    summary: A content type which define that item data is String
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Content_Type_Data
+    type: String
+    summary: A content type which define that item data is Data
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Category_Action
+    type: Number
+    summary: A category type which define that item category is action
+    permission: read-only
+    since: "1.0.0"
+
+  - name: Activity_Category_Share
+    type: Number
+    summary: A category type which define that item category is share
+    permission: read-only
+    since: "1.0.0"        
+    
+methods:
+  - name: createCustomActivity
+    since: "1.0.0"  
+    summary: Create custom activity object which used to share
+    parameters:
+      - name: category
+        summary: Category for activity. Could be any of Activity_Category_*
+        type: Number
+      - name: type
+        summary: activity type for activity
+        type: String   
+      - name: title
+        summary: title for activity
+        type: String 
+      - name: image
+        summary: image for activity
+        type: Titanium.Blob
+    returns:
+        type: Modules.CustomActivity
+
+  - name: createActivityItemSource
+    since: "1.0.0"  
+    summary: Create activity Item Source object which used to share
+    parameters:
+      - name: contentType
+        summary: Content Type of item. It could be any of Content_Type_*
+        type: String
+    returns:
+        type: Modules.ActivityItemSource
+
+  - name: createActivityItemProvider
+    since: "1.0.0"  
+    summary: Create activity Item Provider object which used to share
+    parameters:
+      - name: contentType
+        summary: Content Type of item. It could be any of Content_Type_*
+        type: String
+      - name: placeHolder
+        summary: Placeholder of item. It should return Titanium.Blob if content type is Content_Type_Image/Content_Type_Data and return string if content type is Content_Type_String/Content_Type_URL
+        type: Object
+    returns:
+        type: Modules.ActivityItemSource

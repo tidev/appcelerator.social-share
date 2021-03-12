@@ -1,0 +1,89 @@
+---
+name: Modules.ActivityItemSource
+extends: Titanium.Module
+summary: An class that an activity view controller uses to retrieve the data items to act on.
+since: "1.0.0"
+createable: false
+platforms: [iphone, ipad]
+description: |
+   Because the methods of this protocol are executed on your app’s main thread, you should avoid using this protocol in cases where the data objects might take a significant amount of time to create.
+   When creating large data objects, consider using a ActivityItemProvider object instead.
+properties:
+      - name: contentType
+        summary: content type of activity item
+        type: String
+        since: "1.0.0"
+
+      - name: fetchPlaceholderItem
+        summary: Callback function to called to determine data type. only the class of the return type is consulted. it should match what fetchItem returns later
+        type: Callback<FetchPlaceholderItem>
+        since: "1.0.0"
+
+      - name: fetchItem
+        summary: Callback function to called to fetch data after an activity is selected. you can return nil.
+        type: Callback<FetchItem>
+        since: "1.0.0"
+
+      - name: fetchSubject
+        summary: Callback function to called if activity supports a Subject field.
+        type: Callback<FetchSubject>
+        since: "1.0.0"
+
+      - name: fetchDataTypeIdentifier
+        summary: Callback function to provide UTI for item if content type is Content_Type_Data. it will be called with nil activityType and then selected activityType
+        type: Callback<FetchDataTypeIdentifier>
+        since: "1.0.0"
+
+      - name: fetchThumbnailImage
+        summary: Callback function to called if activity supports preview image
+        type: Callback<FetchThumbnailImage>
+        since: "1.0.0"
+
+---
+name: FetchPlaceholderItem
+since: "1.0.0"
+summary: Argument passed to the callback fetchPlaceholderItem. It should retrun Titanium.Blob if placeholder is image or It can be String
+
+---
+name: FetchItem
+since: "1.0.0"
+summary: Argument passed to the callback fetchItem. It should return Titanium.Blob if content type is Content_Type_Image/Content_Type_Data and return string if content type is Content_Type_String/Content_Type_URL
+properties:
+  - name: activityType
+    summary: Activity type which is selected
+    type: String
+
+---
+name: FetchSubject
+since: "1.0.0"
+summary: Argument passed to the callback fetchSubject. It should return String
+properties:
+  - name: activityType
+    summary: Activity type which is selected
+    type: String    
+
+---
+name: FetchDataTypeIdentifier
+since: "1.0.0"
+summary: Argument passed to the callback fetchDataTypeIdentifier. It should return String
+properties:
+  - name: activityType
+    summary: Activity type which is selected
+    type: String  
+
+---
+name: FetchThumbnailImage
+since: "1.0.0"
+summary: Argument passed to the callback fetchThumbnailImage. It should return Titanium.Blob
+properties:
+  - name: activityType
+    summary: Activity type which is selected
+    type: String  
+
+  - name: width
+    summary: preferred width of image
+    type: Number  
+
+  - name: height
+    summary: preferred height of image
+    type: Number          

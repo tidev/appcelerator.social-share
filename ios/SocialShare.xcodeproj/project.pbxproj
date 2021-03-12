@@ -16,6 +16,11 @@
 		DB75E5161E9CD59000809B2D /* AppceleratorSocialshare.h in Headers */ = {isa = PBXBuildFile; fileRef = DB75E5151E9CD58100809B2D /* AppceleratorSocialshare.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F702348525DE6C9600FB656C /* TiCustomActivityProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702348425DE6C9600FB656C /* TiCustomActivityProxy.swift */; };
 		F702348925DE6E4C00FB656C /* TiCustomActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702348825DE6E4C00FB656C /* TiCustomActivity.swift */; };
+		F702349325E3CE5900FB656C /* TiActivityItemSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F702349225E3CE5900FB656C /* TiActivityItemSourceProxy.swift */; };
+		F7D5585D25E8DA7B007FA19D /* TiActivityItemSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5585C25E8DA7B007FA19D /* TiActivityItemSource.swift */; };
+		F7D5586125E8DCA2007FA19D /* TiShareUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5586025E8DCA2007FA19D /* TiShareUtils.swift */; };
+		F7D5586425E8DD86007FA19D /* TiActivityItemProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5586325E8DD86007FA19D /* TiActivityItemProvider.swift */; };
+		F7D5586725E8F9E0007FA19D /* TiActivityItemProviderProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7D5586625E8F9E0007FA19D /* TiActivityItemProviderProxy.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +36,11 @@
 		DB75E5151E9CD58100809B2D /* AppceleratorSocialshare.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppceleratorSocialshare.h; path = Classes/AppceleratorSocialshare.h; sourceTree = "<group>"; };
 		F702348425DE6C9600FB656C /* TiCustomActivityProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiCustomActivityProxy.swift; path = Classes/TiCustomActivityProxy.swift; sourceTree = "<group>"; };
 		F702348825DE6E4C00FB656C /* TiCustomActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiCustomActivity.swift; path = Classes/TiCustomActivity.swift; sourceTree = "<group>"; };
+		F702349225E3CE5900FB656C /* TiActivityItemSourceProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiActivityItemSourceProxy.swift; path = Classes/TiActivityItemSourceProxy.swift; sourceTree = "<group>"; };
+		F7D5585C25E8DA7B007FA19D /* TiActivityItemSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiActivityItemSource.swift; path = Classes/TiActivityItemSource.swift; sourceTree = "<group>"; };
+		F7D5586025E8DCA2007FA19D /* TiShareUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiShareUtils.swift; path = Classes/TiShareUtils.swift; sourceTree = "<group>"; };
+		F7D5586325E8DD86007FA19D /* TiActivityItemProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiActivityItemProvider.swift; path = Classes/TiActivityItemProvider.swift; sourceTree = "<group>"; };
+		F7D5586625E8F9E0007FA19D /* TiActivityItemProviderProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TiActivityItemProviderProxy.swift; path = Classes/TiActivityItemProviderProxy.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,11 @@
 				DB52E2421E9CD0F800AAAEE0 /* AppceleratorSocialshareModule.swift */,
 				F702348425DE6C9600FB656C /* TiCustomActivityProxy.swift */,
 				F702348825DE6E4C00FB656C /* TiCustomActivity.swift */,
+				F702349225E3CE5900FB656C /* TiActivityItemSourceProxy.swift */,
+				F7D5585C25E8DA7B007FA19D /* TiActivityItemSource.swift */,
+				F7D5586025E8DCA2007FA19D /* TiShareUtils.swift */,
+				F7D5586325E8DD86007FA19D /* TiActivityItemProvider.swift */,
+				F7D5586625E8F9E0007FA19D /* TiActivityItemProviderProxy.swift */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
@@ -188,9 +203,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				F702348525DE6C9600FB656C /* TiCustomActivityProxy.swift in Sources */,
+				F7D5586125E8DCA2007FA19D /* TiShareUtils.swift in Sources */,
 				DB34CDE0207B998A005F8E8C /* AppceleratorSocialshareModuleAssets.m in Sources */,
+				F7D5586425E8DD86007FA19D /* TiActivityItemProvider.swift in Sources */,
+				F7D5586725E8F9E0007FA19D /* TiActivityItemProviderProxy.swift in Sources */,
 				F702348925DE6E4C00FB656C /* TiCustomActivity.swift in Sources */,
+				F7D5585D25E8DA7B007FA19D /* TiActivityItemSource.swift in Sources */,
 				DB52E2431E9CD0F800AAAEE0 /* AppceleratorSocialshareModule.swift in Sources */,
+				F702349325E3CE5900FB656C /* TiActivityItemSourceProxy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

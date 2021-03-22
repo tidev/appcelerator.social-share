@@ -17,8 +17,7 @@ var itemProvider = Ti.UI.createButton({
 itemProvider.addEventListener('click', function () {
 	const itemProvider = socialshare.createActivityItemProvider({
 		contentType: socialshare.Content_Type_String,
-		placeHolder: 'placeholder',
-		activityType: socialshare.Activity_Type_Post_To_Facebook
+		placeHolder: 'placeholder'
 	});
 	global.itemProvider = itemProvider;
 	itemProvider.fetchItem = function () {

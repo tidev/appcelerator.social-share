@@ -1,0 +1,32 @@
+---
+name: Modules.ActivityItemProvider
+extends: Titanium.Module
+summary: A proxy for data that passes to share.
+since: "1.0.0"
+createable: false
+platforms: [iphone, ipad]
+description: |
+   You can use a provider object in situations where you want to make data available for use by an activity but you want to delay providing that data until it is actually needed.
+   For example, you might use a provider object to represent a large video file that needs to be processed before it can be shared to a user’s social media account.
+properties:
+      - name: contentType
+        summary: content type of activity item
+        type: String
+        since: "1.0.0"
+
+      - name: activityType
+        summary: activity type available when fetchItem is called. nil at other times. use this in your fetchItem method to customize the data to return
+        type: String
+        since: "1.0.0"
+
+      - name: fetchPlaceholderItem
+        summary: Callback function to called to determine data type. only the class of the return type is consulted. it should match what fetchItem returns later
+        type: Callback<FetchPlaceholderItem>
+        since: "1.0.0"
+
+      - name: fetchItem
+        summary: Callback function to called to fetch data after an activity is selected. you can return nil.
+        description: |
+            It called on secondary thread when user selects an activity. you must subclass and return a non-nil value.
+        type: Callback<FetchItem>
+        since: "1.0.0"

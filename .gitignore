@@ -21,19 +21,11 @@ xcuserdata
 .idea/
 libs/
 
-android/clean
-android/ant_clean
-android/.classpath
-android/.gradle
-android/.settings
-android/dist/
-android/launch-*
-android/java-sources.txt
 nbproject
 
 /ios/metadata.json
 /ios/dist
-/ios/appcelerator.ble-iphone-*.zip
+/ios/appcelerator.socialshare-iphone-*.zip
 
 node_modules/
 

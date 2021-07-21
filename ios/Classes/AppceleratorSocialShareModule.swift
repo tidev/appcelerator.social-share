@@ -143,7 +143,7 @@ class AppceleratorSocialshareModule: TiModule {
         activityVC.excludedActivityTypes = excludedActivity
 
         let sourceView = options?["view"] as? TiViewProxy
-        if (sourceView != nil) {
+        if sourceView != nil {
             activityVC.popoverPresentationController?.sourceView = sourceView!.view
             activityVC.popoverPresentationController?.sourceRect = sourceView!.rect.rect()
         }

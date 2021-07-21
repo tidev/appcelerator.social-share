@@ -142,6 +142,12 @@ class AppceleratorSocialshareModule: TiModule {
         activityVC.completionWithItemsHandler = block
         activityVC.excludedActivityTypes = excludedActivity
 
+        let sourceView = options?["view"] as? TiViewProxy
+        if (sourceView != nil) {
+            activityVC.popoverPresentationController?.sourceView = sourceView!.view
+            activityVC.popoverPresentationController?.sourceRect = sourceView!.rect.rect()
+        }
+
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController

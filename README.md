@@ -101,6 +101,20 @@ The `socialshare` variable is a reference to the Module object.
 		}
 	});
 ```
+- for ipad use view option
+``` js
+    socialshare.shareWithItems({
+        activityItems: [ itemSource ],
+        activities: [ customActivity ],
+        completionWithItemsHandler: function (e) {
+            if (e.errorCode !== null || e.errorDomain !== null || e.errorDescription !== null) {
+                alert('Error Occured: ' + e.errorDescription);
+                return;
+            }
+        },
+        view: $.idOfView
+    });
+```
 
 ## Example
 - Please see the `example/` folder.

@@ -54,7 +54,7 @@ The `socialshare` variable is a reference to the Module object.
 		activityItems: [ itemProvider ],
 		activities: [ customActivity ],
 		completionWithItemsHandler: function (e) {
-			if (e.errorCode !== null || e.errorDomain !== null || e.errorDescription !== null) {
+			if (e.errorCode || e.errorDomain || e.errorDescription) {
 				alert('Error Occured: ' + e.errorDescription);
 				return;
 			}
@@ -94,12 +94,26 @@ The `socialshare` variable is a reference to the Module object.
 		activityItems: [ itemSource ],
 		activities: [ customActivity ],
 		completionWithItemsHandler: function (e) {
-			if (e.errorCode !== null || e.errorDomain !== null || e.errorDescription !== null) {
+			if (e.errorCode || e.errorDomain || e.errorDescription) {
 				alert('Error Occured: ' + e.errorDescription);
 				return;
 			}
 		}
 	});
+```
+- for usage with the iPad, use the `view` parameter
+``` js
+    socialshare.shareWithItems({
+        activityItems: [ itemSource ],
+        activities: [ customActivity ],
+        completionWithItemsHandler: function (e) {
+            if (e.errorCode || e.errorDomain || e.errorDescription) {
+                alert('Error Occured: ' + e.errorDescription);
+                return;
+            }
+        },
+        view: myView // either an Alloy-based view or classic view
+    });
 ```
 
 ## Example
